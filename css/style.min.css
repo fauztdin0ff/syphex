@@ -97,21 +97,24 @@ img {
    max-width: 100%
 }
 
-html.lenis,
-html.lenis body {
-   height: auto
-}
+@media (min-width: 1024px) {
 
-.lenis.lenis-smooth [data-lenis-prevent] {
-   overscroll-behavior: contain
-}
+   html.lenis,
+   html.lenis body {
+      height: auto
+   }
 
-.lenis.lenis-stopped {
-   overflow: clip
-}
+   .lenis.lenis-smooth [data-lenis-prevent] {
+      overscroll-behavior: contain
+   }
 
-.lenis.lenis-smooth iframe {
-   pointer-events: none
+   .lenis.lenis-stopped {
+      overflow: clip
+   }
+
+   .lenis.lenis-smooth iframe {
+      pointer-events: none
+   }
 }
 
 @font-face {
