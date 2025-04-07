@@ -1047,15 +1047,23 @@
    <script>
       const lenis = new Lenis({
          smooth: true,
-         easing: (t) => 1 - Math.pow(1 - t, 3),
+         smoothTouch: true, // включаем плавность на тач-устройствах
+         easing: (t) => 1 - Math.pow(1 - t, 3), // кривая замедления (можно заменить)
+      });
+
+      // Если используешь ScrollTrigger — синхронизируй его с Lenis
+      lenis.on('scroll', () => {
+         ScrollTrigger.update();
       });
 
       function raf(time) {
          lenis.raf(time);
          requestAnimationFrame(raf);
       }
+
       requestAnimationFrame(raf);
    </script>
+
 
    <script src="js/gsap.min.js"></script>
    <script src="js/scrollTrigger.min.js"></script>

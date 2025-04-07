@@ -63,10 +63,10 @@ document.addEventListener("DOMContentLoaded", () => {
             ease: "none",
             immediateRender: false,
             scrollTrigger: {
-               trigger: '.hero__body',
+               trigger: img,
                start: "top bottom",
                end: "bottom top",
-               scrub: true,
+               scrub: 2,
                invalidateOnRefresh: true,
             },
          });
@@ -179,7 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
             trigger: ".pays__screen-2",
             start: "top 90%",
             end: "top 20%",
-            scrub: true,
+            scrub: 2,
          },
       });
    }
@@ -192,7 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
             trigger: ".pays__screen-3",
             start: "top 80%",
             end: "top 5%",
-            scrub: true,
+            scrub: 2,
          },
       });
    }
@@ -220,7 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
             trigger: ".leaderboard",
             start: "top top",
             end: "bottom top",
-            scrub: true,
+            scrub: 1,
          },
       });
    }
@@ -235,7 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
                trigger: ".apps__infographic",
                start: "top 90%",
                end: "top 0%",
-               scrub: true,
+               scrub: 2,
             },
          });
       }
@@ -269,7 +269,7 @@ document.addEventListener("DOMContentLoaded", () => {
                start: "top 90%",
                end: "top 10%",
                toggleActions: "play none none none",
-               scrub: true,
+               scrub: 2,
             },
          });
       }
@@ -284,7 +284,7 @@ document.addEventListener("DOMContentLoaded", () => {
                start: "top 90%",
                end: "top 10%",
                toggleActions: "play none none none",
-               scrub: true,
+               scrub: 2,
             },
          });
       }
@@ -299,7 +299,7 @@ document.addEventListener("DOMContentLoaded", () => {
                start: "top 90%",
                end: "top 10%",
                toggleActions: "play none none none",
-               scrub: true,
+               scrub: 2,
             },
          });
       }
@@ -317,7 +317,7 @@ document.addEventListener("DOMContentLoaded", () => {
                start: "top 90%",
                end: "top 10%",
                toggleActions: "play none none none",
-               scrub: true,
+               scrub: 2,
             },
          });
       }
@@ -332,7 +332,7 @@ document.addEventListener("DOMContentLoaded", () => {
                start: "top 90%",
                end: "top 10%",
                toggleActions: "play none none none",
-               scrub: true,
+               scrub: 2,
             },
          });
       }
@@ -403,7 +403,7 @@ document.addEventListener("DOMContentLoaded", () => {
          scrollTrigger: {
             trigger: ".refer__text",
             start: "top 80%",
-            scrub: true,
+            scrub: 2,
             toggleActions: "play none none none",
          },
       });
@@ -428,7 +428,7 @@ document.addEventListener("DOMContentLoaded", () => {
             trigger: ".structure__image",
             start: "top 90%",
             end: "top 20%",
-            scrub: true,
+            scrub: 2,
          },
       });
    }
@@ -442,7 +442,7 @@ document.addEventListener("DOMContentLoaded", () => {
                trigger: ".structure__image",
                start: "top 90%",
                end: "top 0%",
-               scrub: true,
+               scrub: 2,
             },
          });
       }
@@ -461,7 +461,7 @@ document.addEventListener("DOMContentLoaded", () => {
                trigger: img,
                start: "top bottom",
                end: "bottom top",
-               scrub: true,
+               scrub: 2,
                invalidateOnRefresh: true,
             },
          });
