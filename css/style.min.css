@@ -3989,7 +3989,7 @@ main {
    }
 
    .affiliate__body {
-      min-height: calc(100svh - 55.53px);
+      /* min-height: calc(100svh - 55.53px); */
       justify-content: space-around;
       padding: 36px 0;
       flex-direction: column-reverse;
@@ -4293,14 +4293,14 @@ main {
 
 @media (min-width:1439px) {
    .hero__body {
-      min-height: calc(100vh - 97px);
+      /* min-height: calc(100vh - 97px); */
       max-height: 1020px
    }
 }
 
 @media (min-width:1680px) {
    .affiliate__body {
-      min-height: calc(100vh - 97.6px);
+      /*  min-height: calc(100vh - 97.6px); */
       max-height: 1020px;
       padding: 80px 0
    }
