@@ -468,8 +468,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
    });
 
+   let resizeTimeout;
+   window.addEventListener('resize', () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+         ScrollTrigger.refresh();
+      }, 200);
+   });
 
-   window.addEventListener("load", () => ScrollTrigger.refresh());
-   window.addEventListener("resize", () => ScrollTrigger.refresh());
 
 });
