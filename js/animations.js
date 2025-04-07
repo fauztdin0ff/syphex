@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
    gsap.registerPlugin(ScrollTrigger);
 
+   ScrollTrigger.normalizeScroll(true);
+
    // Проверка существования элементов
    function elementExists(selector) {
       if (typeof selector === "string") {
@@ -66,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
                trigger: img,
                start: "top bottom",
                end: "bottom top",
-               scrub: 1,
+               scrub: 2,
                invalidateOnRefresh: true,
             },
          });
@@ -179,7 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
             trigger: ".pays__screen-2",
             start: "top 90%",
             end: "top 20%",
-            scrub: 1,
+            scrub: 2,
          },
       });
    }
@@ -192,7 +194,7 @@ document.addEventListener("DOMContentLoaded", () => {
             trigger: ".pays__screen-3",
             start: "top 80%",
             end: "top 5%",
-            scrub: 1,
+            scrub: 2,
          },
       });
    }
@@ -269,7 +271,7 @@ document.addEventListener("DOMContentLoaded", () => {
                start: "top 90%",
                end: "top 10%",
                toggleActions: "play none none none",
-               scrub: 1,
+               scrub: 2,
             },
          });
       }
@@ -284,7 +286,7 @@ document.addEventListener("DOMContentLoaded", () => {
                start: "top 90%",
                end: "top 10%",
                toggleActions: "play none none none",
-               scrub: 1,
+               scrub: 2,
             },
          });
       }
@@ -299,7 +301,7 @@ document.addEventListener("DOMContentLoaded", () => {
                start: "top 90%",
                end: "top 10%",
                toggleActions: "play none none none",
-               scrub: 1,
+               scrub: 2,
             },
          });
       }
@@ -317,7 +319,7 @@ document.addEventListener("DOMContentLoaded", () => {
                start: "top 90%",
                end: "top 10%",
                toggleActions: "play none none none",
-               scrub: 1,
+               scrub: 2,
             },
          });
       }
@@ -332,7 +334,7 @@ document.addEventListener("DOMContentLoaded", () => {
                start: "top 90%",
                end: "top 10%",
                toggleActions: "play none none none",
-               scrub: 1,
+               scrub: 2,
             },
          });
       }
@@ -403,7 +405,7 @@ document.addEventListener("DOMContentLoaded", () => {
          scrollTrigger: {
             trigger: ".refer__text",
             start: "top 80%",
-            scrub: 1,
+            scrub: 2,
             toggleActions: "play none none none",
          },
       });
@@ -428,7 +430,7 @@ document.addEventListener("DOMContentLoaded", () => {
             trigger: ".structure__image",
             start: "top 90%",
             end: "top 20%",
-            scrub: 1,
+            scrub: 2,
          },
       });
    }
@@ -442,7 +444,7 @@ document.addEventListener("DOMContentLoaded", () => {
                trigger: ".structure__image",
                start: "top 90%",
                end: "top 0%",
-               scrub: 1,
+               scrub: 2,
             },
          });
       }
@@ -461,7 +463,7 @@ document.addEventListener("DOMContentLoaded", () => {
                trigger: img,
                start: "top bottom",
                end: "bottom top",
-               scrub: 1,
+               scrub: 2,
                invalidateOnRefresh: true,
             },
          });
@@ -473,9 +475,8 @@ document.addEventListener("DOMContentLoaded", () => {
       clearTimeout(resizeTimeout);
       resizeTimeout = setTimeout(() => {
          ScrollTrigger.refresh();
-      }, 150); // уменьшай задержку, чтобы не перегружать
+      }, 200);
    });
-
 
 
 });
