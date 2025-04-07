@@ -3,7 +3,6 @@ GSAP animations
 ---------------------------*/
 document.addEventListener("DOMContentLoaded", () => {
 
-   gsap.registerPlugin(ScrollTrigger);
 
    // Проверка существования элементов
    function elementExists(selector) {
