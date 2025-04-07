@@ -3,6 +3,7 @@ GSAP animations
 ---------------------------*/
 document.addEventListener("DOMContentLoaded", () => {
 
+   gsap.registerPlugin(ScrollTrigger);
 
    // Проверка существования элементов
    function elementExists(selector) {
@@ -62,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ease: "none",
             immediateRender: false,
             scrollTrigger: {
-               trigger: img,
+               trigger: '.hero__body',
                start: "top bottom",
                end: "bottom top",
                scrub: true,
