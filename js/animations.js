@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
    gsap.registerPlugin(ScrollTrigger);
 
+   ScrollTrigger.normalizeScroll(true);
+   
    // Проверка существования элементов
    function elementExists(selector) {
       if (typeof selector === "string") {
