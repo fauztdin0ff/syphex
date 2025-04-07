@@ -1034,50 +1034,19 @@
          </div>
       </footer>
    </div>
+   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
    <script>
-      if (window.innerWidth > 1024) {
-         const script = document.createElement('script');
-         script.src = 'https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js';
-         script.onload = () => {
-            const lenis = new Lenis({
-               smooth: true,
-               easing: (t) => 1 - Math.pow(1 - t, 3),
-               smoothTouch: false,
-            });
+      const lenis = new Lenis({
+         smooth: true,
+         easing: (t) => 1 - Math.pow(1 - t, 3),
+         smoothTouch: false,
+      });
 
-            function raf(time) {
-               lenis.raf(time);
-               requestAnimationFrame(raf);
-            }
-
-            requestAnimationFrame(raf);
-         };
-         document.head.appendChild(script);
-      }
-   </script>
-
-   <script>
-      let lenis;
-
-      function initLenis() {
-         lenis = new Lenis({
-            smooth: true,
-            easing: (t) => 1 - Math.pow(1 - t, 3),
-            smoothTouch: false,
-         });
-
-         function raf(time) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-         }
-
+      function raf(time) {
+         lenis.raf(time);
          requestAnimationFrame(raf);
       }
-
-      if (window.innerWidth > 1024) {
-         initLenis();
-      }
-
+      requestAnimationFrame(raf);
    </script>
 
    <script src="../js/gsap.min.js"></script>
