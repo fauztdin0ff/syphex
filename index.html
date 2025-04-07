@@ -1045,17 +1045,22 @@
    </div>
    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
    <script>
-      const lenis = new Lenis({
-         smooth: true,
-         easing: (t) => 1 - Math.pow(1 - t, 3),
-         smoothTouch: false,
-      });
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-      function raf(time) {
-         lenis.raf(time);
+      if (!isMobile) {
+         const lenis = new Lenis({
+            smooth: true,
+            easing: (t) => 1 - Math.pow(1 - t, 3),
+            smoothTouch: false,
+         });
+
+         function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+         }
+
          requestAnimationFrame(raf);
       }
-      requestAnimationFrame(raf);
    </script>
    <script src="js/gsap.min.js"></script>
    <script src="js/scrollTrigger.min.js"></script>
