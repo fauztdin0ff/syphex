@@ -212,18 +212,28 @@
       document.addEventListener("DOMContentLoaded", function () {
          const langActive = document.querySelector(".header__lang-active");
 
+         const langMap = {
+            English: "En",
+            Português: "Pt",
+            Deutsch: "De",
+         };
+
          function shortenLang() {
             if (window.innerWidth < 600) {
                const langText = langActive.childNodes[0].nodeValue.trim();
                langActive.dataset.fullLang = langText;
-               langActive.childNodes[0].nodeValue = langText.slice(0, 2);
+
+               const shortLang = langMap[langText] || langText.slice(0, 2);
+               langActive.childNodes[0].nodeValue = shortLang;
             } else {
                if (langActive.dataset.fullLang) {
                   langActive.childNodes[0].nodeValue = langActive.dataset.fullLang;
                }
             }
          }
+
          shortenLang();
+         window.addEventListener("resize", shortenLang);
       });
 
       /*------------------------------
