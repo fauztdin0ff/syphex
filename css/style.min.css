@@ -2192,6 +2192,12 @@ main {
    height: auto;
 }
 
+@media (min-width:768px) and (max-width: 980px) {
+   .rewards__slide:last-child {
+      grid-column: span 2;
+   }
+}
+
 .rewards__image img {
    width: 100%;
    height: 100%;
@@ -3036,8 +3042,8 @@ main {
    }
 
    .benefits {
-      background-size: cover;
-      background-position: center;
+      background-size: contain;
+      background-position: bottom;
       background-repeat: no-repeat
    }
 
@@ -3694,6 +3700,16 @@ main {
 }
 
 @media (max-width:600px) {
+   .benefits__body {
+      display: flex;
+      flex-direction: column;
+   }
+
+   .benefits__future-1,
+   .benefits__future-2,
+   .benefits__future-3 {
+      display: none;
+   }
 
    .button,
    .button-gradient,
@@ -3847,8 +3863,15 @@ main {
    }
 
    .benefits__cards {
+      order: 1;
       flex-direction: column;
-      gap: 8px
+      gap: 8px;
+      margin-bottom: 0;
+      margin-top: 22px;
+   }
+
+   .benefits__card {
+      min-width: 250px;
    }
 
    .benefits__card p {
