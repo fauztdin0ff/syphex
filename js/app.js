@@ -9,7 +9,7 @@
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "isWebp": () => (/* binding */ isWebp)
             /* harmony export */
-});
+         });
          // проверка поддержки webp, добавление класса webp или no-webp
          function isWebp() {
             //проверка поддержки webp
@@ -79,7 +79,7 @@
 
 
          /***/
-})
+      })
 /******/]);
 /************************************************************************/
 /******/ 	// The module cache
@@ -92,14 +92,14 @@
 /******/ 		if (cachedModule !== undefined) {
 /******/ 			return cachedModule.exports;
          /******/
-}
+      }
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
 /******/ 			// no module.id needed
 /******/ 			// no module.loaded needed
 /******/ 			exports: {}
          /******/
-};
+      };
 /******/
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
@@ -107,7 +107,7 @@
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
       /******/
-}
+   }
 /******/
 /************************************************************************/
 /******/ 	/* webpack/runtime/define property getters */
@@ -118,19 +118,19 @@
 /******/ 				if (__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
 /******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
                /******/
-}
+            }
             /******/
-}
+         }
          /******/
-};
+      };
       /******/
-})();
+   })();
 /******/
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
       /******/
-})();
+   })();
 /******/
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
@@ -139,12 +139,12 @@
 /******/ 			if (typeof Symbol !== 'undefined' && Symbol.toStringTag) {
 /******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
             /******/
-}
+         }
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
          /******/
-};
+      };
       /******/
-})();
+   })();
    /******/
    /************************************************************************/
    var __webpack_exports__ = {};
@@ -155,6 +155,18 @@
 
 
       _modules_functions_js__WEBPACK_IMPORTED_MODULE_0__.isWebp();
+
+
+      /*------------------------------Header fixed---------------------------*/
+      const header = document.querySelector('.header');
+
+      window.addEventListener('scroll', () => {
+         if (window.scrollY > 100) {
+            header.classList.add('fixed');
+         } else {
+            header.classList.remove('fixed');
+         }
+      });
 
 
       /*------------------------------
