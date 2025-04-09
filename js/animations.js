@@ -117,13 +117,32 @@ document.addEventListener("DOMContentLoaded", () => {
       }
    });
 
-   const counters = document.querySelectorAll('.counter');
+   //counters
+   const counters1 = document.querySelectorAll('.counter-1');
+   const counters2 = document.querySelectorAll('.counter-2');
+   const counters3 = document.querySelectorAll('.counter-3');
 
-   counters.forEach(counter => {
-      const cleaned = counter.textContent.replace(/[^\d]/g, '');
-      const endValue = Number(cleaned);
+   // counter-1
+   counters1.forEach(counter => {
+      const endValue = parseInt(counter.textContent.trim(), 10);
+      animateCounter(counter, endValue);
+   });
+
+   // counter-2
+   counters2.forEach(counter => {
+      const endValue = parseFloat(counter.textContent.trim().replace(',', '.'));
+      animateCounter(counter, endValue, { isFloat: true });
+   });
+
+   // counter-3
+   counters3.forEach(counter => {
+      const raw = counter.textContent.trim().replace(/\./g, '');
+      const endValue = parseInt(raw, 10);
+      animateCounter(counter, endValue, { useThousandSeparator: true });
+   });
+
+   function animateCounter(counter, endValue, options = {}) {
       const obj = { val: 0 };
-
       const trigger = counter.closest('.hero__body') || counter.parentElement || counter;
 
       gsap.to(obj, {
@@ -136,14 +155,16 @@ document.addEventListener("DOMContentLoaded", () => {
             toggleActions: 'play none none none',
          },
          onUpdate: () => {
-            counter.textContent = Math.floor(obj.val).toLocaleString('de-DE');
+            if (options.isFloat) {
+               counter.textContent = obj.val.toFixed(1).replace('.', ',');
+            } else if (options.useThousandSeparator) {
+               counter.textContent = Math.floor(obj.val).toLocaleString('de-DE');
+            } else {
+               counter.textContent = Math.floor(obj.val);
+            }
          }
       });
-   });
-
-
-
-
+   }
 
    // Pedestal
    if (elementExists(".pedestal__number")) {

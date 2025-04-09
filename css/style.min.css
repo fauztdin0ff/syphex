@@ -341,6 +341,10 @@ main {
    z-index: 2;
 }
 
+.header.header-white {
+   box-shadow: 0 0 16px #fff;
+}
+
 .header.header-white.fixed {
    box-shadow: 0 0 16px #1517396f;
 }
@@ -872,7 +876,9 @@ main {
    }
 }
 
-.counter {
+.counter-1,
+.counter-2,
+.counter-3 {
    font-style: normal;
 }
 
@@ -3838,6 +3844,13 @@ main {
    .hero__button {
       text-align: center;
       margin-bottom: 20px
+   }
+
+   .hero__button .button-gradient,
+   .affiliate__button .button-gradient {
+      padding: 12px 24px;
+      font-size: 14px;
+      min-width: 260px;
    }
 
    .hero__graphic {

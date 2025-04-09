@@ -215,8 +215,9 @@
          const langMap = {
             English: "En",
             Português: "Pt",
-            Deutsch: "De",
+            Español: "Es"
          };
+
 
          function shortenLang() {
             if (window.innerWidth < 600) {
