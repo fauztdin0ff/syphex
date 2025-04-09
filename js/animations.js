@@ -117,11 +117,11 @@ document.addEventListener("DOMContentLoaded", () => {
       }
    });
 
-   //counters
    const counters = document.querySelectorAll('.counter');
 
    counters.forEach(counter => {
-      const endValue = parseInt(counter.textContent, 10);
+      const cleaned = counter.textContent.replace(/[^\d]/g, '');
+      const endValue = Number(cleaned);
       const obj = { val: 0 };
 
       const trigger = counter.closest('.hero__body') || counter.parentElement || counter;
@@ -136,10 +136,13 @@ document.addEventListener("DOMContentLoaded", () => {
             toggleActions: 'play none none none',
          },
          onUpdate: () => {
-            counter.textContent = Math.floor(obj.val);
+            counter.textContent = Math.floor(obj.val).toLocaleString('de-DE');
          }
       });
    });
+
+
+
 
 
    // Pedestal
