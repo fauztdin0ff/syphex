@@ -3,6 +3,21 @@ GSAP animations
 ---------------------------*/
 document.addEventListener("DOMContentLoaded", () => {
 
+   const lenis = new Lenis({
+      smooth: true,
+      easing: (t) => 1 - Math.pow(1 - t, 3),
+      smoothTouch: false,
+   });
+
+   lenis.on('scroll', ScrollTrigger.update);
+
+   function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+   }
+   requestAnimationFrame(raf);
+
+
    gsap.registerPlugin(ScrollTrigger);
 
    function elementExists(selector) {
@@ -422,13 +437,11 @@ document.addEventListener("DOMContentLoaded", () => {
       gsap.set(".offers__card", {
          y: -100,
          opacity: 0,
-         boxShadow: "0 0 0px rgba(0, 150, 255, 0)",
       });
 
       gsap.to(".offers__card", {
          y: 0,
          opacity: 1,
-         boxShadow: "0 0 20px rgba(0, 150, 255, 0.4)",
          duration: 1.2,
          ease: "bounce.out",
          stagger: {
